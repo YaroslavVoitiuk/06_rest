@@ -2,7 +2,7 @@
 GET http://localhost:9998/api/posts
 
 ### Get by id
-GET http://localhost:9998/api/posts/1
+GET http://localhost:9998/api/posts/2
 
 ### save/update
 POST http://localhost:9998/api/posts
@@ -14,5 +14,5 @@ Content-Type: application/json
 }
 
 ### delete by id
-DELETE http://localhost:9998/api/posts/3
+DELETE http://localhost:9998/api/posts/2
 
