@@ -29,11 +29,10 @@ public class PostRepositoryImpl implements PostRepository{
 
     public Optional<Post> getById(long id) {
         return Optional.ofNullable(posts.get(id));
-
     }
 
     public Post save(Post post) {
-        if (post.getId() == 0 && !posts.containsKey(post.getId())) {
+        if (post.getId() == 0) {
             Post newPost = new Post(id.incrementAndGet(), post.getContent());
             posts.put(id.get(), newPost);
         } else if (post.getId() != 0 && posts.containsKey(post.getId())) {
@@ -47,7 +46,6 @@ public class PostRepositoryImpl implements PostRepository{
     public void removeById(long postId) {
         if(posts.containsKey(postId)){
             posts.remove(postId);
-            id.set(posts.size());
         }else throw new NotFoundException("no such posts found");
     }
 }
